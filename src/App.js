@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import IndexPage from './indexPage.js';
+import AboutPage from './aboutPage.js';
 
 const App = () => {
   return (
