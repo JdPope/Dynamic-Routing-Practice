@@ -2,9 +2,8 @@ import React from 'react';
 
 const IndexPage = () => {
   return(
-    <h3>Index Page</h3>
+    <h1>What up homes</h1>
   )
-
 }
 
 export default IndexPage;

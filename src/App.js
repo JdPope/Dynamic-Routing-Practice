@@ -6,15 +6,19 @@ import AboutPage from './aboutPage.js';
 
 const users = [
   {
-    name: `Param`,
+    name: `Jesse`,
+    greeting: 'hello'
   },
   {
-    name: `Vennila`,
+    name: `Sarah`,
   },
   {
-    name: `Afrin`,
+    name: `David`,
   },
+  {name: 'Josh',
+},
 ];
+
 const UsersPage =() => {
   return (
     <>
@@ -27,6 +31,27 @@ const UsersPage =() => {
     </>
   )
 }
+
+const UserPage = ({ match, location }) => {
+  const { params: { userId } } = match;
+
+  return (
+    <>
+      <p>
+        <strong>User ID: </strong>
+        {userId}
+      </p>
+      <p>
+        <strong>User Name: </strong>
+        {users[userId - 1].name}
+      </p>
+      <p>
+        <strong>Greeting: </strong>
+        {users[userId - 1].greeting}
+      </p>
+    </>
+  );
+};
 
 const App = () => {
   return (
@@ -41,6 +66,7 @@ const App = () => {
       <Route exact path="/" component={IndexPage}/>
       <Route exact path="/about" component={AboutPage}/>
       <Route exact path="/users" component={UsersPage}/>
+      <Route path="/user/:userId" component={UserPage} />
     </Router>
 
     </div>
